@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/cabify/static/css/main.1bb72a62.chunk.css",
+    "main.js": "/cabify/static/js/main.db92aa49.chunk.js",
+    "main.js.map": "/cabify/static/js/main.db92aa49.chunk.js.map",
+    "runtime-main.js": "/cabify/static/js/runtime-main.eae5c1d0.js",
+    "runtime-main.js.map": "/cabify/static/js/runtime-main.eae5c1d0.js.map",
+    "static/js/2.11b13a7a.chunk.js": "/cabify/static/js/2.11b13a7a.chunk.js",
+    "static/js/2.11b13a7a.chunk.js.map": "/cabify/static/js/2.11b13a7a.chunk.js.map",
+    "index.html": "/cabify/index.html",
+    "precache-manifest.0932af40ac80e727c1c793e031b9798d.js": "/cabify/precache-manifest.0932af40ac80e727c1c793e031b9798d.js",
+    "service-worker.js": "/cabify/service-worker.js",
+    "static/css/main.1bb72a62.chunk.css.map": "/cabify/static/css/main.1bb72a62.chunk.css.map",
+    "static/js/2.11b13a7a.chunk.js.LICENSE.txt": "/cabify/static/js/2.11b13a7a.chunk.js.LICENSE.txt",
+    "static/media/bg-card.png": "/cabify/static/media/bg-card.05c4af2f.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.eae5c1d0.js",
+    "static/js/2.11b13a7a.chunk.js",
+    "static/css/main.1bb72a62.chunk.css",
+    "static/js/main.db92aa49.chunk.js"
+  ]
+}

@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #EDEDF0;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.container {
+  width: 70vw;
+  height: auto;
+  margin: 0 auto;
+  margin-top: 10vh;
+  margin-right: 6vw;
+  position: relative;
+}
+
+.title-card h1 {
+  font-family: 'Secular One', sans-serif;
+}
+
+input:focus {
+  border-color: #7350ff !important;
+} 
+
+button:hover {
+  background-color: #7F5AFF !important;
+}
+
+.disabled {
+  background-color: #CEC3F8 !important;
+}
+
+/*
+.list-box::-webkit-scrollbar {
+  display: none;
+}
+*/
+
+.country-box:hover {
+  cursor: pointer;
+  background-color: #ededf0 !important;
+}
+
+.prefix-select::after {
+  background-color: transparent !important;
+}
+
+.display-options {
+  display: block !important;
+}
+
+.hide-options {
+  display: none !important;
+}

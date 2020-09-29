@@ -14,6 +14,14 @@ class Form extends Component {
       email: "",
       website: "",
       address: "",
+      errors: {
+        name: false,
+        job: false,
+        phone: false,
+        email: false,
+        website: false,
+        address: false,
+      },
       submit: false,
     };
 
@@ -50,8 +58,16 @@ class Form extends Component {
         marginBottom: "10px",
       },
       phoneBox: {
-        display: "flex",
-        width: "70%",
+        parent: {
+          display: "flex",
+          width: "70%",
+          position: "relative",
+        },
+        icon: {
+          position: "absolute", 
+          color: "red", 
+          right: 0,
+        }
       },
     };
 
@@ -59,6 +75,19 @@ class Form extends Component {
       color: "#737379",
       fontSize: "12px",
     };
+
+    this.inputBoxStyles = {
+      parent: {
+        width: "100%", 
+        position: "relative", 
+        display: "flex"
+      },
+      icon: {
+        position: "absolute", 
+        color: "red", 
+        right: 0,
+      },
+    }
 
     this.inputStyles = {
       width: "100%",
@@ -84,8 +113,27 @@ class Form extends Component {
     };
   }
 
+  cleanValidationErrors = ( field ) => {
+    if ( this.state.errors[`${ field }`] && this.state[`${ field }`].length > 0 ) { 
+      const data = this.state.errors;
+      
+      const errors = Object.entries(data).reduce((accumulator, currentValue) => {
+        if (currentValue[0] === field) {
+          accumulator[`${ field }`] = false;
+        } else {
+          accumulator[`${ currentValue[0] }`] = currentValue[1];
+        }
+        return accumulator;
+      },{})
+
+      this.setState({errors});
+    }
+  }
+
   onChangeInputHandler = (event) => {
     event.preventDefault();
+    this.cleanValidationErrors(event.target.name);
+
     this.setState({
       name: this.name.value,
       job: this.job.value,
@@ -99,9 +147,32 @@ class Form extends Component {
 
   onSubmitFormHandler = (event) => {
     event.preventDefault();
-    this.setState({
-      submit: true
-    });
+    
+    let errors = {};
+    const { name, job, phone, email, website, address } = this.state;
+    const dataInput = [ 
+      { property: "name", name }, 
+      { property: "job", job }, 
+      { property: "phone", phone }, 
+      { property: "email", email }, 
+      { property: "website", website }, 
+      { property:"address", address } 
+    ];
+
+    const errorsData = dataInput.reduce( (accumulator, currentValue) => {
+      if (currentValue[`${currentValue.property}`].length === 0) {
+        errors[`${ currentValue.property }`] = true;
+        this.setState({errors});
+        accumulator.push(currentValue);
+      }
+      return accumulator;
+    },[])
+
+    if ( errorsData.length === 0 ) {
+      this.setState({
+        submit: true
+      });
+    } 
   }
 
   render() {
@@ -123,80 +194,112 @@ class Form extends Component {
               <label htmlFor="full-name" style={this.labelStyles}>
                 Full name:
               </label>
-              <input 
-                type="text" 
-                name="fullname" 
-                style={ this.inputStyles }
-                ref={ node => this.name = node }
-                onChange={ this.onChangeInputHandler }
-                value={ this.state.name }
-              />
+
+              <div className="input-box" style={ this.inputBoxStyles.parent }>
+                <input 
+                  type="text" 
+                  name="name"
+                  className={ this.state.errors.name ? "error ": "" } 
+                  style={ this.inputStyles }
+                  ref={ node => this.name = node }
+                  onChange={ this.onChangeInputHandler }
+                  value={ this.state.name }
+                />
+                <i className={ this.state.errors.name ? "fa fa-exclamation-circle show" : "fa fa-exclamation-circle hide" } aria-hidden="true" style={ this.inputBoxStyles.icon }></i>
+              </div>
+
             </div>
             <div className="form-group" style={this.formGroupStyles.default}>
               <label htmlFor="job-description" style={this.labelStyles}>
                 Job description:
               </label>
-              <input
-                type="text"
-                name="job-description"
-                style={this.inputStyles}
-                ref={ node => this.job = node }
-                onChange={ this.onChangeInputHandler }
-                value={ this.state.job }
-              />
+              
+              <div className="input-box" style={ this.inputBoxStyles.parent }>
+                <input
+                  type="text"
+                  name="job"
+                  className={ this.state.errors.job ? "error ": "" } 
+                  style={this.inputStyles}
+                  ref={ node => this.job = node }
+                  onChange={ this.onChangeInputHandler }
+                  value={ this.state.job }
+                />
+                <i className={ this.state.errors.job ? "fa fa-exclamation-circle show" : "fa fa-exclamation-circle hide" } aria-hidden="true" style={ this.inputBoxStyles.icon }></i>
+              </div>
+
             </div>
             <div className="form-group" style={this.formGroupStyles.custom}>
               <CustomSelect ref={ this.optionSelect } />
-              <div className="phone-box" style={this.formGroupStyles.phoneBox}>
+              <div className="phone-box" style={ this.formGroupStyles.phoneBox.parent }>
                 <input
-                  type="number"
-                  name="phone-number"
+                  type="text"
+                  name="phone"
+                  className={ this.state.errors.phone ? "error ": "" } 
                   style={this.inputStyles}
                   placeholder="Phone number"
                   ref={ node => this.phone = node }
                   onChange={ this.onChangeInputHandler }
                   value={ this.state.phone }
                 />
+                <i className={ this.state.errors.phone ? "fa fa-exclamation-circle show" : "fa fa-exclamation-circle hide" } aria-hidden="true" style={ this.formGroupStyles.phoneBox.icon }></i>
               </div>
             </div>
             <div className="form-group" style={this.formGroupStyles.default}>
               <label htmlFor="full-name" style={this.labelStyles}>
-                Email:
+                E-mail:
               </label>
-              <input
-                type="email"
-                name="job-description"
-                style={this.inputStyles}
-                ref={ node => this.email = node }
-                onChange={ this.onChangeInputHandler }
-                value={ this.state.email }
-              />
+
+              <div className="input-box" style={ this.inputBoxStyles.parent }>
+                <input
+                  type="email"
+                  name="email"
+                  className={ this.state.errors.email ? "error ": "" } 
+                  style={this.inputStyles}
+                  ref={ node => this.email = node }
+                  onChange={ this.onChangeInputHandler }
+                  value={ this.state.email }
+                />
+                <i className={ this.state.errors.email ? "fa fa-exclamation-circle show" : "fa fa-exclamation-circle hide" } aria-hidden="true" style={ this.inputBoxStyles.icon }></i>
+              </div>
+
             </div>
             <div className="form-group" style={this.formGroupStyles.default}>
               <label htmlFor="website" style={this.labelStyles}>
                 Website:
               </label>
-              <input 
-                type="text" 
-                name="website" 
-                style={this.inputStyles} 
-                ref={ node => this.website = node }
-                onChange={ this.onChangeInputHandler }
-                value={ this.state.website }
+
+              <div className="input-box" style={ this.inputBoxStyles.parent }>
+                <input 
+                  type="text" 
+                  name="website" 
+                  className={ this.state.errors.website ? "error ": "" } 
+                  style={this.inputStyles} 
+                  ref={ node => this.website = node }
+                  onChange={ this.onChangeInputHandler }
+                  value={ this.state.website }
                 />
+                <i className={ this.state.errors.website ? "fa fa-exclamation-circle show" : "fa fa-exclamation-circle hide" } aria-hidden="true" style={ this.inputBoxStyles.icon }></i>
+              </div>
+              
             </div>
             <div className="form-group" style={this.formGroupStyles.default}>
               <label htmlFor="address" style={this.labelStyles}>
                 Address:
               </label>
-              <input 
-                type="text" 
-                name="address" 
-                style={this.inputStyles} 
-                ref={ node => this.address = node }
-                onChange={ this.onChangeInputHandler }
-                value={ this.state.address }
+
+              <div className="input-box" style={ this.inputBoxStyles.parent }>
+                <input 
+                  type="text" 
+                  name="address"
+                  className={ this.state.errors.address ? "error ": "" }  
+                  style={this.inputStyles} 
+                  ref={ node => this.address = node }
+                  onChange={ this.onChangeInputHandler }
+                  value={ this.state.address }
                 />
+                <i className={ this.state.errors.address ? "fa fa-exclamation-circle show" : "fa fa-exclamation-circle hide" } aria-hidden="true" style={ this.inputBoxStyles.icon }></i>
+              </div>
+
             </div>
             <button
               className={this.state.submit ? "disabled" : ""}

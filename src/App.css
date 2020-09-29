@@ -52,10 +52,14 @@ button:hover {
   background-color: transparent !important;
 }
 
-.display-options {
+.show {
   display: block !important;
 }
 
-.hide-options {
+.hide {
   display: none !important;
+}
+
+.error {
+  border-color: #ff000047 !important;
 }

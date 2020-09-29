@@ -34,7 +34,8 @@ class CustomSelect extends Component {
       border: "1px solid #ccc",
       borderRadius: "5px",
       boxShadow: "0px 0px 2px 0px rgba(0,0,0,0.75)",
-      padding: "5px 10px", 
+      padding: "5px 10px",
+      zIndex: 1, 
     };
 
     this.countryBoxStyles = {
@@ -112,7 +113,7 @@ class CustomSelect extends Component {
           <i className="fa fa-angle-up" aria-hidden="true" style={{ color: "rgb(159, 159, 162)" }}></i>
         </div>
 
-        <div className={ this.state.showOptions ? 'display-options' : 'hide-options' } style={ this.listBoxtStyles } >
+        <div className={ this.state.showOptions ? 'show' : 'hide' } style={ this.listBoxtStyles } >
           {this.state.countries.map((country) => {
             return (
               <div

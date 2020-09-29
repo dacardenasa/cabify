@@ -132,6 +132,7 @@ class Form extends Component {
 
   onChangeInputHandler = (event) => {
     event.preventDefault();
+
     this.cleanValidationErrors(event.target.name);
 
     this.setState({
@@ -172,6 +173,7 @@ class Form extends Component {
       this.setState({
         submit: true
       });
+      console.log("Sending data to WEB API resource in progress....");
     } 
   }
 
@@ -302,8 +304,9 @@ class Form extends Component {
 
             </div>
             <button
-              className={this.state.submit ? "disabled" : ""}
-              style={this.buttonsStyle}
+              className={ this.state.submit ? "disabled" : "" }
+              style={ this.buttonsStyle }
+              disabled={ this.state.submit }
             >
               Request
             </button>

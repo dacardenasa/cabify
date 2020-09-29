@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/cabify/static/css/main.0d9abe32.chunk.css",
-    "main.js": "/cabify/static/js/main.a7036b43.chunk.js",
-    "main.js.map": "/cabify/static/js/main.a7036b43.chunk.js.map",
+    "main.css": "/cabify/static/css/main.bf6ee4b4.chunk.css",
+    "main.js": "/cabify/static/js/main.837f2910.chunk.js",
+    "main.js.map": "/cabify/static/js/main.837f2910.chunk.js.map",
     "runtime-main.js": "/cabify/static/js/runtime-main.eae5c1d0.js",
     "runtime-main.js.map": "/cabify/static/js/runtime-main.eae5c1d0.js.map",
     "static/js/2.11b13a7a.chunk.js": "/cabify/static/js/2.11b13a7a.chunk.js",
     "static/js/2.11b13a7a.chunk.js.map": "/cabify/static/js/2.11b13a7a.chunk.js.map",
     "index.html": "/cabify/index.html",
-    "precache-manifest.63397bf01774f980da6c85b6204da9b8.js": "/cabify/precache-manifest.63397bf01774f980da6c85b6204da9b8.js",
+    "precache-manifest.9a3a7c2f971a89b9fa6a764adecc1e98.js": "/cabify/precache-manifest.9a3a7c2f971a89b9fa6a764adecc1e98.js",
     "service-worker.js": "/cabify/service-worker.js",
-    "static/css/main.0d9abe32.chunk.css.map": "/cabify/static/css/main.0d9abe32.chunk.css.map",
+    "static/css/main.bf6ee4b4.chunk.css.map": "/cabify/static/css/main.bf6ee4b4.chunk.css.map",
     "static/js/2.11b13a7a.chunk.js.LICENSE.txt": "/cabify/static/js/2.11b13a7a.chunk.js.LICENSE.txt",
     "static/media/bg-card.png": "/cabify/static/media/bg-card.05c4af2f.png"
   },
   "entrypoints": [
     "static/js/runtime-main.eae5c1d0.js",
     "static/js/2.11b13a7a.chunk.js",
-    "static/css/main.0d9abe32.chunk.css",
-    "static/js/main.a7036b43.chunk.js"
+    "static/css/main.bf6ee4b4.chunk.css",
+    "static/js/main.837f2910.chunk.js"
   ]
 }

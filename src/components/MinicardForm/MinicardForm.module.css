@@ -1,0 +1,77 @@
+/* Styles for MinicardForm Component */
+
+.miniCardFormStyles {
+  width: 75%;
+  height: 120px;
+  color: #000;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 150px;
+  left: 60px;
+  padding: 20px;
+  z-index: 1;
+}
+
+.headerInfoStyles  {
+  padding-bottom: 10px;
+}
+
+.nameTagStyles  {
+  color: #7350FF; 
+  font-size: 12px;
+}
+
+.jobTagStyles  {
+  font-size: 9px;
+  color: #212240;
+}
+
+.boxStyles  {
+  display: flex; 
+}
+
+.iconTagStyles  {
+  font-size: 9px; 
+  color: #ccc;
+}
+
+.contentTagStyles  {
+  font-size: 8px; 
+  padding-left: 5px;
+  color: rgb(115, 115, 121);
+}
+
+.boxAddressLogoStyles  { 
+  display: flex;
+  justify-content: space-between; 
+  position: relative; 
+}
+
+.addressIconTagStyles  { 
+  font-size: 9px; 
+  color: #ccc; 
+}
+
+.addressContentTagStyles  { 
+  font-size: 8px; 
+  padding-left: 5px; 
+  color: rgb(115, 115, 121); 
+}
+
+.boxLogoTagStyles  { 
+  position: absolute;
+  right: 0; 
+  bottom: 0; 
+}
+
+.addresBoxTagStyles  { 
+  display: flex; 
+}
+
+.imgTagStyles  { 
+  width: 15px; 
+  height: 15px; 
+}
+

@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import CardForm from './components/CardForm';
+import CardForm from './components/CardForm/CardForm';
 
 function App() {
   return (

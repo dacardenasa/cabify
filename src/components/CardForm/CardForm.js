@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import CustomSelect from "./CustomSelect";
-import Card from "./Card";
-import styles from './Card.module.css';
+import CustomSelect from "../CustomSelect/CustomSelect";
+import Card from "../Card/Card";
+import styles from './CardForm.module.css';
 
 class Form extends Component {
   constructor(props) {

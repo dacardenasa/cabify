@@ -1,6 +1,6 @@
 import React from 'react';
 import logo from '../../img/logo.png';
-import styles from './Card.module.css';
+import styles from './Minicard.module.css';
 
 const Minicard = () => {
 

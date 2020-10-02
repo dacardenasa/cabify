@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Minicard from './Minicard';
-import MinicardForm from './MinicardForm';
+import Minicard from '../Minicard/Minicard';
+import MinicardForm from '../MinicardForm/MinicardForm';
 import logoAlone from '../../img/logo-alone.png';
 import styles from './Card.module.css';
 

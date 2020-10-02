@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/cabify/static/css/main.efb9ab70.chunk.css",
-    "main.js": "/cabify/static/js/main.41e4321b.chunk.js",
-    "main.js.map": "/cabify/static/js/main.41e4321b.chunk.js.map",
+    "main.css": "/cabify/static/css/main.7b2e6056.chunk.css",
+    "main.js": "/cabify/static/js/main.c4da8da6.chunk.js",
+    "main.js.map": "/cabify/static/js/main.c4da8da6.chunk.js.map",
     "runtime-main.js": "/cabify/static/js/runtime-main.eae5c1d0.js",
     "runtime-main.js.map": "/cabify/static/js/runtime-main.eae5c1d0.js.map",
-    "static/js/2.96bc4d1b.chunk.js": "/cabify/static/js/2.96bc4d1b.chunk.js",
-    "static/js/2.96bc4d1b.chunk.js.map": "/cabify/static/js/2.96bc4d1b.chunk.js.map",
+    "static/js/2.83e73db3.chunk.js": "/cabify/static/js/2.83e73db3.chunk.js",
+    "static/js/2.83e73db3.chunk.js.map": "/cabify/static/js/2.83e73db3.chunk.js.map",
     "index.html": "/cabify/index.html",
-    "precache-manifest.afb4b35135ed5203d9fbcc082c6ce83c.js": "/cabify/precache-manifest.afb4b35135ed5203d9fbcc082c6ce83c.js",
+    "precache-manifest.b6f2d482a58be427d63211d38285da19.js": "/cabify/precache-manifest.b6f2d482a58be427d63211d38285da19.js",
     "service-worker.js": "/cabify/service-worker.js",
-    "static/css/main.efb9ab70.chunk.css.map": "/cabify/static/css/main.efb9ab70.chunk.css.map",
-    "static/js/2.96bc4d1b.chunk.js.LICENSE.txt": "/cabify/static/js/2.96bc4d1b.chunk.js.LICENSE.txt",
+    "static/css/main.7b2e6056.chunk.css.map": "/cabify/static/css/main.7b2e6056.chunk.css.map",
+    "static/js/2.83e73db3.chunk.js.LICENSE.txt": "/cabify/static/js/2.83e73db3.chunk.js.LICENSE.txt",
     "static/media/Card.module.css": "/cabify/static/media/bg-card.05c4af2f.png"
   },
   "entrypoints": [
     "static/js/runtime-main.eae5c1d0.js",
-    "static/js/2.96bc4d1b.chunk.js",
-    "static/css/main.efb9ab70.chunk.css",
-    "static/js/main.41e4321b.chunk.js"
+    "static/js/2.83e73db3.chunk.js",
+    "static/css/main.7b2e6056.chunk.css",
+    "static/js/main.c4da8da6.chunk.js"
   ]
 }

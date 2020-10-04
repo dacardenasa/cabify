@@ -4,8 +4,8 @@ import Card from "../Card/Card";
 import styles from './CardForm.module.css';
 
 class Form extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
 
     this.state = {
       name: "",
@@ -76,17 +76,11 @@ class Form extends Component {
 
   onChangeInputHandler = (event) => {
     event.preventDefault();
-
-    this.cleanValidationErrors(event.target.name);
-
+    const stateName = event.target.name;
+    this.cleanValidationErrors(stateName);
     this.setState({
-      name: this.name.value,
-      job: this.job.value,
+      [stateName]: this[stateName].value,
       prefix: this.optionSelect.current.getPrefixCountry(),
-      phone: this.phone.value,
-      email: this.email.value,
-      website: this.website.value,
-      address: this.address.value,
     });
   }
 

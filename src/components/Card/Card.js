@@ -6,62 +6,78 @@ import styles from './Card.module.css';
 
 class Card extends Component {
 
-  constructor(props){
-    super(props);
+  state = {
+    name: this.props.name,
+    job: this.props.job,
+    prefix: this.props.prefix,
+    phone: this.props.phone,
+    email: this.props.email,
+    website: this.props.website,
+    address: this.props.address,
+  };
 
-    this.state = {
-      name: this.props.name || "Laura Sanchez",
-      job: this.props.job || "Frontend Developer",
-      prefix: this.props.prefix || "34",
-      phone: this.props.phone || "3133466784",
-      email: this.props.email || "laurita009@outlook.es",
-      website: this.props.website || "www.lautiraDeveloper.com",
-      address: this.props.address || "Calle 11 No 5-87 Oeste, Madrid"
-    };
+  static getDerivedStateFromProps( props, state ) {
+    if ( props.name !== state.name ) { return { name: props.name } };
+
+    if ( props.job !== state.job ) { return { job: props.job } };
+
+    if ( props.prefix !== state.prefix ) { return { prefix: props.prefix } };
+
+    if ( props.phone !== state.phone ) { return { phone: props.phone } };
+
+    if ( props.email !== state.email ) { return { email: props.email } };
+
+    if ( props.website !== state.website ) { return { website: props.website } };
+
+    if ( props.address !== state.address ) { return { address: props.address } };
+
+    return null;
   }
 
-  componentWillReceiveProps(nextProps){
-    if (this.props.name !== nextProps.name){
+  conponentDidUpdate( prevProps, prevState ) {
+
+    if ( prevProps.name !== this.state.name ) {
       this.setState({
-        name: nextProps.name,
+        name: prevProps.name
       });
     }
 
-    if (this.props.job !== nextProps.job){
+    if ( prevProps.job !== this.state.job ) {
       this.setState({
-        job: nextProps.job,
+        job: prevProps.job
       });
     }
 
-    if (this.props.prefix !== nextProps.prefix){
+    if ( prevProps.prefix !== this.state.prefix ) {
       this.setState({
-        prefix: nextProps.prefix,
+        prefix: prevProps.prefix
       });
     }
 
-    if (this.props.phone !== nextProps.phone){
+    if ( prevProps.phone !== this.state.phone ) {
       this.setState({
-        phone: nextProps.phone,
+        phone: prevProps.phone
       });
     }
 
-    if (this.props.email !== nextProps.email){
+    if ( prevProps.email !== this.state.email ) {
       this.setState({
-        email: nextProps.email,
+        email: prevProps.email
       });
     }
 
-    if (this.props.website !== nextProps.website){
+    if ( prevProps.website !== this.state.website ) {
       this.setState({
-        website: nextProps.website,
+        website: prevProps.website
       });
     }
 
-    if (this.props.address !== nextProps.address){
+    if ( prevProps.address !== this.state.address ) {
       this.setState({
-        address: nextProps.address,
+        address: prevProps.address
       });
     }
+
   }
 
   render(){

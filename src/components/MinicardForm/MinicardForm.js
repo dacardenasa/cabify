@@ -3,64 +3,80 @@ import logo from '../../img/logo-alone-blue.png';
 import styles from './MinicardForm.module.css';
 
 class MinicardForm extends Component {
-
-  constructor(props) {
-    super(props);
     
-    this.state = {
-      name: this.props.name,
-      job: this.props.job,
-      prefix: this.props.prefix,
-      phone: this.props.phone,
-      email: this.props.email,
-      website: this.props.website,
-      address: this.props.address,
-    }
-
+  state = {
+    name: "",
+    job: "",
+    prefix: "",
+    phone: "",
+    email: "",
+    website: "",
+    address: ""
   }
 
-  componentWillReceiveProps(nextProps){
-    if (this.props.name !== nextProps.name){
+  static getDerivedStateFromProps( props, state ) {
+
+    if ( props.name !== state.name ) { return { name: props.name } };
+
+    if ( props.job !== state.job ) { return { job: props.job } };
+
+    if ( props.prefix !== state.prefix ) { return { prefix: props.prefix } };
+
+    if ( props.phone !== state.phone ) { return { phone: props.phone } };
+
+    if ( props.email !== state.email ) { return { email: props.email } };
+
+    if ( props.website !== state.website ) { return { website: props.website } };
+
+    if ( props.address !== state.address ) { return { address: props.address } };
+
+    return null;
+  }
+
+  conponentDidUpdate( prevProps, prevState ) {
+
+    if ( prevProps.name !== this.state.name ) {
       this.setState({
-        name: nextProps.name,
+        name: prevProps.name
       });
     }
 
-    if (this.props.job !== nextProps.job){
+    if ( prevProps.job !== this.state.job ) {
       this.setState({
-        job: nextProps.job,
+        job: prevProps.job
       });
     }
 
-    if (this.props.prefix !== nextProps.prefix){
+    if ( prevProps.prefix !== this.state.prefix ) {
       this.setState({
-        prefix: nextProps.prefix,
+        prefix: prevProps.prefix
       });
     }
 
-    if (this.props.phone !== nextProps.phone){
+    if ( prevProps.phone !== this.state.phone ) {
       this.setState({
-        phone: nextProps.phone,
+        phone: prevProps.phone
       });
     }
 
-    if (this.props.email !== nextProps.email){
+    if ( prevProps.email !== this.state.email ) {
       this.setState({
-        email: nextProps.email,
+        email: prevProps.email
       });
     }
 
-    if (this.props.website !== nextProps.website){
+    if ( prevProps.website !== this.state.website ) {
       this.setState({
-        website: nextProps.website,
+        website: prevProps.website
       });
     }
 
-    if (this.props.address !== nextProps.address){
+    if ( prevProps.address !== this.state.address ) {
       this.setState({
-        address: nextProps.address,
+        address: prevProps.address
       });
     }
+
   }
 
   render(){
@@ -68,31 +84,44 @@ class MinicardForm extends Component {
       <div className={ styles.miniCardFormStyles }>
   
         <div className={ styles.headerInfoStyles }>
-          <h4 className={ styles.nameTagStyles }>{ this.state.name }</h4>
-          <h6 className={ styles.jobTagStyles }>{ this.state.job }</h6>
+          <h4 className={ styles.nameTagStyles }>
+            { this.state.name.length > 0 ? this.state.name : "Laura Sanchez" }
+          </h4>
+          <h6 className={ styles.jobTagStyles }>
+            { this.state.job.length > 0 ? this.state.job : "Frontend Developer" }
+          </h6>
         </div>
   
         <div className="body-info" style={{ display: "flex", flexFlow: "column wrap" }}>
   
           <div className={ styles.boxStyles }>
             <i className={ styles.iconTagStyles + " fa fa-phone" } aria-hidden="true"></i>
-            <h6 className={ styles.contentTagStyles }>+{ `${this.state.prefix} ${this.state.phone}` }</h6>
+            <h6 className={ styles.contentTagStyles }>
+              +{ `${this.state.prefix.length > 0 ? this.state.prefix : "34"}` }
+              { ` ${ this.state.phone.length > 0 ? this.state.phone : "3133466784" }`}
+            </h6>
           </div>
   
           <div className={ styles.boxStyles }>
             <i className={ styles.iconTagStyles + " fa fa-envelope-o" } aria-hidden="true"></i>
-            <h6 className={ styles.contentTagStyles }>{ this.state.email }</h6>
+            <h6 className={ styles.contentTagStyles }>
+              { this.state.email.length > 0 ? this.state.email : "laurita009@outlook.es" }
+            </h6>
           </div>
   
           <div className={ styles.boxStyles }>
             <i className={ styles.iconTagStyles + " fa fa-globe" } aria-hidden="true"></i>
-            <h6 className={ styles.contentTagStyles }>{ this.state.website }</h6>
+            <h6 className={ styles.contentTagStyles }>
+              { this.state.website.length > 0 ? this.state.website : "www.lautiraDeveloper.com" }
+            </h6>
           </div>
   
           <div className={ styles.boxAddressLogoStyles }>
             <div className={ styles.addresBoxTagStyles }> 
               <i className={ styles.addressIconTagStyles + " fa fa-street-view" } aria-hidden="true"></i>
-              <h6 className={ styles.addressContentTagStyles }>{ this.state.address }</h6>
+              <h6 className={ styles.addressContentTagStyles }>
+                { this.state.address.length > 0 ? this.state.address : "Calle 11 No 5-87 Oeste, Madrid" }
+              </h6>
             </div>
             <div className={ styles.boxLogoTagStyles }>
               <img src={logo} alt="log-cabify" className={ styles.imgTagStyles }/>

@@ -1,49 +1,43 @@
 import React, { Component } from "react";
-import styles from './CustomSelect.module.css';
+const styles = require('./CustomSelect.module.css');
 
-class CustomSelect extends Component {
-  constructor() {
-    super();
+class CustomSelect extends Component<any, any> {
 
-    this.state = {
-      prefix: 34,
-      countries: [],
-      showOptions: false,
-    };
-  }
+  state: IcountryData = {
+    prefix: 34,
+    countries: [],
+    showOptions: false,
+  };
 
   async componentDidMount() {
-    const url = "https://restcountries.eu/rest/v2/all";
-    const response = await fetch(url);
+    const url: string = "https://restcountries.eu/rest/v2/all";
+    const response: any = await fetch(url);
 
     if (response.ok) {
-      const countries = await response.json();
-      const formatDataCountries = countries.reduce((accumulator, country) => {
+      const countries: any [] = await response.json();
+      const formatDataCountries: Array<{ name: string, callingCodes: string, flag: string }> = countries.reduce((accumulator, country) => {
         const { name, callingCodes, flag } = country;
         accumulator.push({ name, callingCodes, flag });
         return accumulator;
       }, []);
 
       this.setState({
-        countries: formatDataCountries,
+        countries: [...this.state.countries, ...formatDataCountries],
       });
     } else {
       console.log(`HTTP-Error: ${response.status}`);
     }
   }
 
-  onClickSelectHandler = (event) => {
+  onClickSelectHandler = (event: React.MouseEvent<HTMLElement> ) => {
     event.preventDefault();
-    let booleanOptions;
-
-    this.state.showOptions ? booleanOptions = false : booleanOptions = true; 
 
     this.setState({
-      showOptions: booleanOptions
+      showOptions: !this.state.showOptions
     });
   }
 
-  onClickOptionHandler = ( prefix, country ) => {
+  onClickOptionHandler = ( prefix: string, country: string ) => {
     this.setState({
       prefix,
       country,
@@ -51,8 +45,8 @@ class CustomSelect extends Component {
     });
   }
 
-  getPrefixCountry = () => {
-    return this.state.prefix;
+  getPrefixCountry = ():string => {
+    return (this.state.prefix).toString();
   }
 
   render() {
@@ -61,12 +55,12 @@ class CustomSelect extends Component {
         <label htmlFor="prefix" className={ styles.labelStyles }>
           Prefix:
         </label>
-        <div onClick={ this.onClickSelectHandler } className={ styles.selectBoxTagStyles }>
+        <div onClick={ e => this.onClickSelectHandler(e) } className={ styles.selectBoxTagStyles }>
           <span className={ styles.defaultOptionTagStyles }>+{ this.state.prefix }</span>
           <i className={ styles.dropDownIconTagStyles + " fa fa-angle-up" } aria-hidden="true"></i>
         </div>
 
-        <div className={ this.state.showOptions ? 'show ' +styles.listBoxtStyles : 'hide ' + styles.listBoxtStyles }>
+        <div className={ this.state.showOptions ? 'show ' + styles.listBoxtStyles : 'hide ' + styles.listBoxtStyles }>
           {this.state.countries.map((country) => {
             return (
               <div
@@ -99,6 +93,12 @@ class CustomSelect extends Component {
       </div>
     );
   }
+}
+
+interface IcountryData {
+  prefix: number;
+  countries: { name: string, callingCodes: string, flag: string }[];
+  showOptions: boolean;
 }
 
 export default CustomSelect;

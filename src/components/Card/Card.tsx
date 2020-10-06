@@ -1,12 +1,23 @@
 import React, { Component } from 'react';
 import Minicard from '../Minicard/Minicard';
 import MinicardForm from '../MinicardForm/MinicardForm';
-import logoAlone from '../../img/logo-alone.png';
-import styles from './Card.module.css';
+import { IUserState } from '../IUserState';
+const logoAlone = require('../../img/logo-alone.png');
+const styles = require('./Card.module.css');
 
-class Card extends Component {
+interface ICardProps {
+  name: string,
+  job: string,
+  prefix: string,
+  phone: string,
+  email: string,
+  website: string,
+  address: string,
+}
 
-  state = {
+class Card extends Component<ICardProps, IUserState> {
+
+  state:IUserState = {
     name: this.props.name,
     job: this.props.job,
     prefix: this.props.prefix,
@@ -16,7 +27,7 @@ class Card extends Component {
     address: this.props.address,
   };
 
-  static getDerivedStateFromProps( props, state ) {
+  static getDerivedStateFromProps( props: ICardProps, state: IUserState ) {
     if ( props.name !== state.name ) { return { name: props.name } };
 
     if ( props.job !== state.job ) { return { job: props.job } };
@@ -34,7 +45,7 @@ class Card extends Component {
     return null;
   }
 
-  conponentDidUpdate( prevProps, prevState ) {
+  conponentDidUpdate( prevProps: ICardProps, prevState: IUserState ) {
 
     if ( prevProps.name !== this.state.name ) {
       this.setState({

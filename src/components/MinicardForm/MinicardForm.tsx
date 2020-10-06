@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
-import logo from '../../img/logo-alone-blue.png';
-import styles from './MinicardForm.module.css';
+import { IUserState } from '../IUserState';
+const styles = require('./MinicardForm.module.css');
+const logo = require('../../img/logo-alone-blue.png');
 
-class MinicardForm extends Component {
+
+class MinicardForm extends Component<any, IUserState> {
     
-  state = {
+  state: IUserState = {
     name: "",
     job: "",
     prefix: "",
@@ -14,7 +16,7 @@ class MinicardForm extends Component {
     address: ""
   }
 
-  static getDerivedStateFromProps( props, state ) {
+  static getDerivedStateFromProps( props: any, state: IUserState ) {
 
     if ( props.name !== state.name ) { return { name: props.name } };
 
@@ -33,7 +35,7 @@ class MinicardForm extends Component {
     return null;
   }
 
-  conponentDidUpdate( prevProps, prevState ) {
+  conponentDidUpdate( prevProps: any, prevState: any ) {
 
     if ( prevProps.name !== this.state.name ) {
       this.setState({

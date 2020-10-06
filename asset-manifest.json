@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/cabify/static/css/main.7e7bb91d.chunk.css",
-    "main.js": "/cabify/static/js/main.2f518be7.chunk.js",
-    "main.js.map": "/cabify/static/js/main.2f518be7.chunk.js.map",
+    "main.js": "/cabify/static/js/main.f54c116e.chunk.js",
+    "main.js.map": "/cabify/static/js/main.f54c116e.chunk.js.map",
     "runtime-main.js": "/cabify/static/js/runtime-main.eae5c1d0.js",
     "runtime-main.js.map": "/cabify/static/js/runtime-main.eae5c1d0.js.map",
-    "static/js/2.1cc91349.chunk.js": "/cabify/static/js/2.1cc91349.chunk.js",
-    "static/js/2.1cc91349.chunk.js.map": "/cabify/static/js/2.1cc91349.chunk.js.map",
+    "static/js/2.76ec584f.chunk.js": "/cabify/static/js/2.76ec584f.chunk.js",
+    "static/js/2.76ec584f.chunk.js.map": "/cabify/static/js/2.76ec584f.chunk.js.map",
     "index.html": "/cabify/index.html",
-    "precache-manifest.8ab60cfffd1b72984b33ec33e2fef0e0.js": "/cabify/precache-manifest.8ab60cfffd1b72984b33ec33e2fef0e0.js",
+    "precache-manifest.cca8a2bed1cf15c7d3cc62bd69e6da88.js": "/cabify/precache-manifest.cca8a2bed1cf15c7d3cc62bd69e6da88.js",
     "service-worker.js": "/cabify/service-worker.js",
     "static/css/main.7e7bb91d.chunk.css.map": "/cabify/static/css/main.7e7bb91d.chunk.css.map",
-    "static/js/2.1cc91349.chunk.js.LICENSE.txt": "/cabify/static/js/2.1cc91349.chunk.js.LICENSE.txt",
+    "static/js/2.76ec584f.chunk.js.LICENSE.txt": "/cabify/static/js/2.76ec584f.chunk.js.LICENSE.txt",
     "static/media/Card.module.css": "/cabify/static/media/bg-card.05c4af2f.png"
   },
   "entrypoints": [
     "static/js/runtime-main.eae5c1d0.js",
-    "static/js/2.1cc91349.chunk.js",
+    "static/js/2.76ec584f.chunk.js",
     "static/css/main.7e7bb91d.chunk.css",
-    "static/js/main.2f518be7.chunk.js"
+    "static/js/main.f54c116e.chunk.js"
   ]
 }

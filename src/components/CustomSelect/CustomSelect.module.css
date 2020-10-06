@@ -43,35 +43,3 @@
   padding: 5px 10px;
   z-index: 1; 
 }
-
-.flagImgTagStyles {
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-}
-
-.optionTagStyles { 
-  font-size: 10px; 
-  color: rgb(115, 115, 121);
-}
-
-.countriesBoxStyles {
-  width: 100%;
-  height: 30px;
-  display: flex;
-  justify-content: space-between;
-  padding: 5px;
-  transition: all 300ms;
-}
-
-.flagBoxTagStyles {
-  width: 20%;
-}
-
-.nameBoxTagStyles {
-  width: 60%;
-}
-
-.prefixBoxTagStyles {
-  width: 20%;
-}

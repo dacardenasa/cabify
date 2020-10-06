@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import CountriesList from '../CountriesList/CountriesList';
 const styles = require('./CustomSelect.module.css');
 
 class CustomSelect extends Component<any, any> {
@@ -59,37 +60,18 @@ class CustomSelect extends Component<any, any> {
           <span className={ styles.defaultOptionTagStyles }>+{ this.state.prefix }</span>
           <i className={ styles.dropDownIconTagStyles + " fa fa-angle-up" } aria-hidden="true"></i>
         </div>
-
         <div className={ this.state.showOptions ? 'show ' + styles.listBoxtStyles : 'hide ' + styles.listBoxtStyles }>
-          {this.state.countries.map((country) => {
-            return (
-              <div
-                className={ styles.countriesBoxStyles + " country-box"}
-                key={ country.name }
-                onClick={ () => this.onClickOptionHandler( country.callingCodes, country.name ) }
-              >
-                <div className="flag-box">
-                  <img
-                    className={ styles.flagImgTagStyles }
-                    src={ country.flag }
-                    alt={ country.name + " flag" }
-                  />
-                </div>
-                <div className="name-box">
-                  <p className={ styles.optionTagStyles }>
-                    { country.name }
-                  </p>
-                </div>
-                <div className="prefix-box">
-                  <p className={ styles.optionTagStyles }>
-                    { "+" + country.callingCodes }
-                  </p>
-                </div>
-              </div>
-            );
+          { this.state.countries.map((country) => {
+            return(
+              <CountriesList 
+                name={ country.name }
+                callingCode= { country.callingCodes }
+                flag={ country.flag }
+                onClickOptionHandler={ this.onClickOptionHandler.bind(this) }
+              />
+            )
           })}
         </div>
-
       </div>
     );
   }

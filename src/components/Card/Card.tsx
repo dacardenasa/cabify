@@ -5,16 +5,6 @@ import { IUserState } from '../IUserState';
 const logoAlone = require('../../img/logo-alone.png');
 const styles = require('./Card.module.css');
 
-interface ICardProps {
-  name: string,
-  job: string,
-  prefix: string,
-  phone: string,
-  email: string,
-  website: string,
-  address: string,
-}
-
 class Card extends Component<ICardProps, IUserState> {
 
   state:IUserState = {
@@ -116,6 +106,16 @@ class Card extends Component<ICardProps, IUserState> {
       </div>
     );
   }
+}
+
+interface ICardProps {
+  name: string,
+  job: string,
+  prefix: string,
+  phone: string,
+  email: string,
+  website: string,
+  address: string,
 }
 
 export default Card;
